@@ -14,9 +14,11 @@ class ApexExtra {
         val modEventBus = FMLJavaModLoadingContext.get().modEventBus
         Config.ITEMS.register(modEventBus)
         Config.TABS.register(modEventBus)
+        Config.SOUNDS.register(modEventBus);
         modEventBus.addListener(Config::buildCreativeTabContent);
 
         modEventBus.addListener(GenData::onGenData);
+
     }
 
 }
