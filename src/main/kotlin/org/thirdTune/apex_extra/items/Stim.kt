@@ -12,10 +12,13 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 import org.thirdTune.apex_extra.ApexExtra
+import org.thirdTune.apex_extra.Config
+
 
 class Stim : Item(Properties()) {
+    private var soundTime = 0
     override fun use(world: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
-        player.addEffect(MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 2))
+        player.addEffect(MobEffectInstance(MobEffects.MOVEMENT_SPEED, 120, 3))
         if (!player.isCreative) {
             if (player.health <= 3.0f) {
                 player.health = 1.0f
@@ -23,7 +26,16 @@ class Stim : Item(Properties()) {
                 player.health -= 3.0f
             }
         }
-        world.playSound(player,player.blockPosition() , SoundEvent.createVariableRangeEvent(ResourceLocation(ApexExtra.MOD_ID, "stim_activate")),SoundSource.MASTER)
+        player.cooldowns.addCooldown(this,120)
+        // 声音
+        world.playSound(
+            player, player.blockPosition(),
+            SoundEvent.createVariableRangeEvent(ResourceLocation(ApexExtra.MOD_ID, Config.STIM_ACTIVATE_ID)),
+            SoundSource.MASTER,
+            0.8f,
+            1.0f
+        )
+
         return super.use(world, player, usedHand)
     }
 }

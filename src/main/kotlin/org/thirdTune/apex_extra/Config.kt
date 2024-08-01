@@ -24,21 +24,24 @@ object Config {
     val STIM: RegistryObject<Stim> = ITEMS.register(STIM_ID) { Stim() }
 
     // 音效
-    val Stim_Activate_1P_01: RegistryObject<SoundEvent> = SOUNDS.register("stim_activate_1p_01") {
+    const val STIM_ACTIVATE_ID = "stim_activate"
+    val Stim_Activate_01: RegistryObject<SoundEvent> = SOUNDS.register("stim_activate_01") {
         SoundEvent.createVariableRangeEvent(
-            ResourceLocation(ApexExtra.MOD_ID, "sounds/stim_activate_1p_01.ogg")
+            ResourceLocation(ApexExtra.MOD_ID, "sounds/stim_activate_01.ogg")
         )
     }
-    val Stim_Activate_1P_02: RegistryObject<SoundEvent> = SOUNDS.register("stim_activate_1p_02") {
+    val Stim_Activate_02: RegistryObject<SoundEvent> = SOUNDS.register("stim_activate_02") {
         SoundEvent.createVariableRangeEvent(
-            ResourceLocation(ApexExtra.MOD_ID, "sounds/stim_activate_1p_02.ogg")
+            ResourceLocation(ApexExtra.MOD_ID, "sounds/stim_activate_02.ogg")
         )
     }
-    val Stim_Activate_1P_03: RegistryObject<SoundEvent> = SOUNDS.register("stim_activate_1p_03") {
+    val Stim_Activate_03: RegistryObject<SoundEvent> = SOUNDS.register("stim_activate_03") {
         SoundEvent.createVariableRangeEvent(
-            ResourceLocation(ApexExtra.MOD_ID, "sounds/stim_activate_1p_03.ogg")
+            ResourceLocation(ApexExtra.MOD_ID, "sounds/stim_activate_03.ogg")
         )
     }
+
+
 
     // TAB
     val MAIN_TAB: RegistryObject<CreativeModeTab> = TABS.register("main_tab") { CreativeModeTab.builder().icon { ItemStack(STIM.get()) }.build() }

@@ -1,9 +1,9 @@
 {
   "stim_activate": {
     "sounds": [
-      "apex_extra:stim_activate_1p_01",
-      "apex_extra:stim_activate_1p_02",
-      "apex_extra:stim_activate_1p_03"
+      "apex_extra:stim_activate_01",
+      "apex_extra:stim_activate_02",
+      "apex_extra:stim_activate_03"
     ],
     "subtitle": "Stim activate"
   }
