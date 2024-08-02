@@ -7,8 +7,12 @@ import net.minecraftforge.common.data.ExistingFileHelper
 import net.minecraftforge.common.data.LanguageProvider
 import net.minecraftforge.common.data.SoundDefinitionsProvider
 import net.minecraftforge.data.event.GatherDataEvent
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
 
 object GenData {
+    fun init(){
+        FMLJavaModLoadingContext.get().modEventBus.addListener(GenData::onGenData)
+    }
     fun onGenData(event: GatherDataEvent) {
         val gen = event.generator
         val packOutput = gen.packOutput
@@ -25,7 +29,7 @@ object GenData {
         }
 
         private fun addItemTranslations() {
-            this.add(Config.STIM.get(), "Stim")
+            this.add(ModItems.STIM.get(), "Stim")
         }
     }
 
@@ -35,7 +39,7 @@ object GenData {
         }
 
         private fun addItemTranslations() {
-            this.add(Config.STIM.get(), "加速激素")
+            this.add(ModItems.STIM.get(), "加速激素")
         }
     }
 
@@ -43,8 +47,8 @@ object GenData {
         ItemModelProvider(gen, ApexExtra.MOD_ID, helper) {
         override fun registerModels() {
             this.singleTexture(
-                Config.STIM_ID, ResourceLocation("item/generated"), "layer0",
-                ResourceLocation(ApexExtra.MOD_ID, "item/${Config.STIM_ID}")
+                ModItems.STIM_ID, ResourceLocation("item/generated"), "layer0",
+                ResourceLocation(ApexExtra.MOD_ID, "item/${ModItems.STIM_ID}")
             )
         }
     }
@@ -53,10 +57,10 @@ object GenData {
         SoundDefinitionsProvider(gen, ApexExtra.MOD_ID, helper) {
         override fun registerSounds() {
             this.add(
-                Config.STIM_ACTIVATE_ID, definition().with(
-                    sound(Config.Stim_Activate_01.id),
-                    sound(Config.Stim_Activate_02.id),
-                    sound(Config.Stim_Activate_03.id),
+                ModSounds.STIM_ACTIVATE_ID, definition().with(
+                    sound(ModSounds.Stim_Activate_01.id),
+                    sound(ModSounds.Stim_Activate_02.id),
+                    sound(ModSounds.Stim_Activate_03.id),
                 ).subtitle("Stim activate")
             )
         }

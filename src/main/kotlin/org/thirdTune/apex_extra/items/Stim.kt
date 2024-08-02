@@ -12,11 +12,12 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 import org.thirdTune.apex_extra.ApexExtra
-import org.thirdTune.apex_extra.Config
+import org.thirdTune.apex_extra.ModSounds
 
-
+/**
+ * 动力小子的兴奋剂
+ */
 class Stim : Item(Properties()) {
-    private var soundTime = 0
     override fun use(world: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         player.addEffect(MobEffectInstance(MobEffects.MOVEMENT_SPEED, 120, 3))
         if (!player.isCreative) {
@@ -26,11 +27,11 @@ class Stim : Item(Properties()) {
                 player.health -= 3.0f
             }
         }
-        player.cooldowns.addCooldown(this,120)
+        player.cooldowns.addCooldown(this, 120)
         // 声音
         world.playSound(
             player, player.blockPosition(),
-            SoundEvent.createVariableRangeEvent(ResourceLocation(ApexExtra.MOD_ID, Config.STIM_ACTIVATE_ID)),
+            SoundEvent.createVariableRangeEvent(ResourceLocation(ApexExtra.MOD_ID, ModSounds.STIM_ACTIVATE_ID)),
             SoundSource.MASTER,
             0.8f,
             1.0f
