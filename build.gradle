@@ -116,6 +116,8 @@ dependencies {
     implementation "thedarkcolour:kotlinforforge:$kff_version"
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api")
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
+    implementation 'io.netty:netty-common:4.1.83.Final'
+    implementation 'io.netty:netty-transport:4.1.83.Final'
 }
 
 tasks.named('processResources', ProcessResources).configure {

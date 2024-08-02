@@ -6,7 +6,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
-import org.thirdTune.apex_extra.ClientEventHandler
+import org.thirdTune.apex_extra.ApexExtra
 
 class AllfatherEye : Item(Properties()) {
     // 持续时间 (秒)
@@ -31,7 +31,7 @@ class AllfatherEye : Item(Properties()) {
         selectedIndex: Int
     ) {
         if (showTime == 0) {
-            ClientEventHandler.nearPlayerHighLight = false
+            ApexExtra.nearPlayerHighLight = false
         } else {
             showTime--
         }
