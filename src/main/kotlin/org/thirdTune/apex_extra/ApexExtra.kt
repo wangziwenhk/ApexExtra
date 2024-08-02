@@ -1,9 +1,10 @@
 package org.thirdTune.apex_extra
 
-import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.common.Mod
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
+import org.thirdTune.apex_extra.ResManager.ITEMS
+import org.thirdTune.apex_extra.ResManager.SOUNDS
+import org.thirdTune.apex_extra.ResManager.TABS
 
 
 @Mod(ApexExtra.MOD_ID)
@@ -12,12 +13,15 @@ class ApexExtra {
         const val MOD_ID = "apex_extra"
         const val MOD_NAME = "Apex Extra"
     }
+    init{
+        init();
+    }
 
-    @SubscribeEvent
-    fun init(event:FMLCommonSetupEvent){
-        val modEventBus = FMLJavaModLoadingContext.get().modEventBus
-        RegManager.init()
+    private fun init() {
         ModCreativeTab.init()
         GenData.init()
+        ITEMS.register(FMLJavaModLoadingContext.get().modEventBus)
+        TABS.register(FMLJavaModLoadingContext.get().modEventBus)
+        SOUNDS.register(FMLJavaModLoadingContext.get().modEventBus)
     }
 }
