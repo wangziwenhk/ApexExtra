@@ -16,6 +16,7 @@ object ModCreativeTab {
     private fun buildCreativeTabContent(event: BuildCreativeModeTabContentsEvent) {
         if (event.tab === MAIN_TAB.get()) {
             event.accept(ModItems.STIM.get())
+            event.accept(ModItems.ALLFATHER_EYE.get())
         }
     }
 

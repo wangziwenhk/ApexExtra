@@ -14,5 +14,9 @@ class ModelProvider(gen: PackOutput, helper: ExistingFileHelper) :
             ModItems.STIM_ID, ResourceLocation("item/generated"), "layer0",
             ResourceLocation(ApexExtra.MOD_ID, "item/${ModItems.STIM_ID}")
         )
+        this.singleTexture(
+            ModItems.ALLFATHER_EYE_ID, ResourceLocation("item/generated"), "layer0",
+            ResourceLocation(ApexExtra.MOD_ID, "item/${ModItems.ALLFATHER_EYE_ID}")
+        )
     }
 }

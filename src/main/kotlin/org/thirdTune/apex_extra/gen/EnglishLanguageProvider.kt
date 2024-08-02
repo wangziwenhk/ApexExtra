@@ -12,5 +12,6 @@ class EnglishLanguageProvider(gen: PackOutput) : LanguageProvider(gen, ApexExtra
 
     private fun addItemTranslations() {
         this.add(ModItems.STIM.get(), "Stim")
+        this.add(ModItems.ALLFATHER_EYE.get(), "Eye of the Allfather")
     }
 }
