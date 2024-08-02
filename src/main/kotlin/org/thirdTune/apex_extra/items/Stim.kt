@@ -18,8 +18,12 @@ import org.thirdTune.apex_extra.ModSounds
  * 动力小子的兴奋剂
  */
 class Stim : Item(Properties()) {
+    // 持续时间 (秒)
+    private val duration = 6
+    // 冷却时间 (秒)
+    private val cooldown = 6
     override fun use(world: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
-        player.addEffect(MobEffectInstance(MobEffects.MOVEMENT_SPEED, 120, 3))
+        player.addEffect(MobEffectInstance(MobEffects.MOVEMENT_SPEED, duration * 20, 3))
         if (!player.isCreative) {
             if (player.health <= 3.0f) {
                 player.health = 1.0f
@@ -27,7 +31,7 @@ class Stim : Item(Properties()) {
                 player.health -= 3.0f
             }
         }
-        player.cooldowns.addCooldown(this, 120)
+        player.cooldowns.addCooldown(this, cooldown * 20)
         // 声音
         world.playSound(
             player, player.blockPosition(),
