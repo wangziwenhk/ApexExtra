@@ -13,7 +13,6 @@ class ApexExtra {
     companion object{
         const val MOD_ID = "apex_extra"
         const val MOD_NAME = "Apex Extra"
-        var nearPlayerHighLight = false
     }
     init{
         init()
