@@ -24,7 +24,9 @@ class AllfatherEye : Item(Properties().stacksTo(1).setNoRepair()) {
         player.cooldowns.addCooldown(this, cooldown * 20)
         for (nearPlayer in player.level()
             .getEntitiesOfClass(Player::class.java, player.boundingBox.inflate(10.0))) {
-            nearPlayer.addEffect(MobEffectInstance(MobEffects.GLOWING, duration * 20, 0))
+            if(nearPlayer!=player){
+                nearPlayer.addEffect(MobEffectInstance(MobEffects.GLOWING, duration * 20, 0))
+            }
         }
         showTime = duration * 20
         return super.use(world, player, usedHand)

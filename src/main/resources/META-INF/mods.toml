@@ -5,7 +5,7 @@ license = "All Rights Reserved"
 # mod 的 modid
 modId = "apex_extra" #mandatory
 # mod 的版本号
-version = "1.0" #mandatory
+version = "1.0.1" #mandatory
 # mod 的显示名称
 displayName = "ApexExtra" #mandatory
 authors = "wangziwenhk" #optional
