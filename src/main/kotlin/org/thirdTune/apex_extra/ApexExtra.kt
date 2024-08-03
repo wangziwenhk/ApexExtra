@@ -6,6 +6,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
 import org.thirdTune.apex_extra.ResManager.ITEMS
 import org.thirdTune.apex_extra.ResManager.SOUNDS
 import org.thirdTune.apex_extra.ResManager.TABS
+import org.thirdTune.apex_extra.handlers.FallHandler
 
 
 @Mod(ApexExtra.MOD_ID)
@@ -19,9 +20,10 @@ class ApexExtra {
     }
 
     private fun init() {
+
         ModCreativeTab.init()
-        GenData.init()
-        MinecraftForge.EVENT_BUS.register(EventHandler)
+        FMLJavaModLoadingContext.get().modEventBus.register(GenData)
+        MinecraftForge.EVENT_BUS.register(FallHandler)
         ITEMS.register(FMLJavaModLoadingContext.get().modEventBus)
         TABS.register(FMLJavaModLoadingContext.get().modEventBus)
         SOUNDS.register(FMLJavaModLoadingContext.get().modEventBus)
