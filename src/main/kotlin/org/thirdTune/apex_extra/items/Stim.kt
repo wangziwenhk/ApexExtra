@@ -18,10 +18,14 @@ import org.thirdTune.apex_extra.ModSounds
  * 动力小子的兴奋剂
  */
 class Stim : Item(Properties()) {
-    // 持续时间 (秒)
-    private val duration = 6
-    // 冷却时间 (秒)
-    private val cooldown = 6
+    companion object {
+        // 持续时间 (秒)
+        const val duration = 6
+
+        // 冷却时间 (秒)
+        const val cooldown = 6
+    }
+
     override fun use(world: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         player.addEffect(MobEffectInstance(MobEffects.MOVEMENT_SPEED, duration * 20, 3))
         if (!player.isCreative) {
@@ -37,7 +41,7 @@ class Stim : Item(Properties()) {
             player, player.blockPosition(),
             SoundEvent.createVariableRangeEvent(ResourceLocation(ApexExtra.MOD_ID, ModSounds.STIM_ACTIVATE_ID)),
             SoundSource.MASTER,
-            0.8f,
+            0.7f,
             1.0f
         )
 

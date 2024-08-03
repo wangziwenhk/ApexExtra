@@ -1,35 +1,36 @@
 modLoader = "javafml" #mandatory
-loaderVersion = "[47,)" #mandatory 这通常会被 Forge 的每个 Minecraft 版本撞到。请参阅我们的下载页面以获取版本列表。
-license = "All Rights Reserved"
+loaderVersion = "${loader_version_range}" #mandatory 这通常会被 Forge 的每个 Minecraft 版本撞到。请参阅我们的下载页面以获取版本列表。
+license = "${mod_license}"
 [[mods]] #mandatory
 # mod 的 modid
-modId = "apex_extra" #mandatory
+modId = "${mod_id}" #mandatory
 # mod 的版本号
-version = "1.0.1" #mandatory
+version = "${mod_version}" #mandatory
 # mod 的显示名称
-displayName = "ApexExtra" #mandatory
-authors = "wangziwenhk" #optional
+displayName = "${mod_name}" #mandatory
+authors = "${mod_authors}" #optional
+logoFile = "assets/${mod_id}/textures/gui/logo.png"
 
 description = '''Added some skills from Apex Legends'''
-[[dependencies.apex_extra]] #optional
+[[dependencies.${mod_id}]] #optional
     modId = "forge" #mandatory
     mandatory = true #mandatory
     versionRange = "[47,)" #mandatory
     ordering = "NONE"
     side = "BOTH"
-[[dependencies.apex_extra]]
+[[dependencies.${mod_id}]]
     modId = "minecraft"
     mandatory = true
     versionRange = "[1.20.1,1.21)"
     ordering = "NONE"
     side = "BOTH"
-[[dependencies.apex_extra]]
+[[dependencies.${mod_id}]]
     modId = "curios"
     mandatory = true
     versionRange = "[5.3,)"
     ordering = "NONE"
     side = "BOTH"
-[[dependencies.apex_extra]]
+[[dependencies.${mod_id}]]
     modId = "kotlinforforge"
     mandatory = true
     versionRange = "[4.3,)"

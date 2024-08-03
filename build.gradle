@@ -131,9 +131,9 @@ tasks.named('processResources', ProcessResources).configure {
     inputs.properties replaceProperties
 
     // 通过这个东西来让IDEA获取到资源信息
-//    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
-//        expand replaceProperties + [project: project]
-//    }
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties + [project: project]
+    }
 }
 
 tasks.named('jar', Jar).configure {

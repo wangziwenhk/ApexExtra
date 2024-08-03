@@ -17,6 +17,7 @@ object ModCreativeTab {
         if (event.tab === MAIN_TAB.get()) {
             event.accept(ModItems.STIM.get())
             event.accept(ModItems.ALLFATHER_EYE.get())
+            event.accept(ModItems.SAFE_BOOTS.get())
         }
     }
 

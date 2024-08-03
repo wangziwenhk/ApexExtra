@@ -13,5 +13,6 @@ class ChineseLanguageProvider(gen: PackOutput) : LanguageProvider(gen, ApexExtra
     private fun addItemTranslations() {
         this.add(ModItems.STIM.get(), "加速激素")
         this.add(ModItems.ALLFATHER_EYE.get(), "众神之眼")
+        this.add(ModItems.SAFE_BOOTS.get(),"安全靴子")
     }
 }
