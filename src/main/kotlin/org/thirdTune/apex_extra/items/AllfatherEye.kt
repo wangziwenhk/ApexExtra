@@ -23,7 +23,7 @@ class AllfatherEye : Item(Properties().stacksTo(1).setNoRepair()) {
     override fun use(world: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         player.cooldowns.addCooldown(this, cooldown * 20)
         for (nearPlayer in player.level()
-            .getEntitiesOfClass(Player::class.java, player.boundingBox.inflate(10.0))) {
+            .getEntitiesOfClass(Player::class.java, player.boundingBox.inflate(40.0))) {
             if(nearPlayer!=player){
                 nearPlayer.addEffect(MobEffectInstance(MobEffects.GLOWING, duration * 20, 0))
             }
