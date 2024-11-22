@@ -9,7 +9,7 @@ version = "${mod_version}" #mandatory
 # mod 的显示名称
 displayName = "${mod_name}" #mandatory
 authors = "${mod_authors}" #optional
-logoFile = "assets/${mod_id}/textures/gui/logo.png"
+logoFile = "src/main/resources/assets/${mod_id}/textures/gui/logo.png"
 
 description = '''Added some skills from Apex Legends'''
 [[dependencies.${mod_id}]] #optional
