@@ -1,4 +1,4 @@
-package org.thirdTune.apex_extra.items
+package org.wangziwenhk.apex_extra.items
 
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.sounds.SoundEvent
@@ -11,8 +11,8 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
-import org.thirdTune.apex_extra.ApexExtra
-import org.thirdTune.apex_extra.ModSounds
+import org.wangziwenhk.apex_extra.ApexExtra
+import org.wangziwenhk.apex_extra.ModSounds
 
 /**
  * 动力小子的兴奋剂
@@ -20,14 +20,14 @@ import org.thirdTune.apex_extra.ModSounds
 class Stim : Item(Properties()) {
     companion object {
         // 持续时间 (秒)
-        const val duration = 6
+        const val DURATION = 6
 
         // 冷却时间 (秒)
-        const val cooldown = 6
+        const val COOLDOWN = 6
     }
 
     override fun use(world: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
-        player.addEffect(MobEffectInstance(MobEffects.MOVEMENT_SPEED, duration * 20, 3))
+        player.addEffect(MobEffectInstance(MobEffects.MOVEMENT_SPEED, DURATION * 20, 3))
         if (!player.isCreative) {
             if (player.health <= 3.0f) {
                 player.health = 1.0f
@@ -35,7 +35,7 @@ class Stim : Item(Properties()) {
                 player.health -= 3.0f
             }
         }
-        player.cooldowns.addCooldown(this, cooldown * 20)
+        player.cooldowns.addCooldown(this, COOLDOWN * 20)
         // 声音
         world.playSound(
             player, player.blockPosition(),

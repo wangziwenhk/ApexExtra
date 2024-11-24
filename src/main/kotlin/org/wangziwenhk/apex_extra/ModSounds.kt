@@ -1,10 +1,10 @@
-package org.thirdTune.apex_extra
+package org.wangziwenhk.apex_extra
 
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.sounds.SoundEvent
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.registries.RegistryObject
-import org.thirdTune.apex_extra.ResManager.SOUNDS
+import org.wangziwenhk.apex_extra.ResManager.SOUNDS
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 object ModSounds {

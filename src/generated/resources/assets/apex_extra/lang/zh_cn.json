@@ -1,5 +1,8 @@
 {
+  "curios.identifier.legend_badge": "传奇徽章",
   "item.apex_extra.allfather_eye": "众神之眼",
+  "item.apex_extra.allfather_eye.effect": "侦测到扫描",
+  "item.apex_extra.octane_badge": "动力小子徽章",
   "item.apex_extra.safe_boots": "安全靴子",
   "item.apex_extra.stim": "加速激素"
 }

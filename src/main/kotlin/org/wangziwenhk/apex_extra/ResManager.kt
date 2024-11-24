@@ -1,4 +1,4 @@
-package org.thirdTune.apex_extra
+package org.wangziwenhk.apex_extra
 
 import net.minecraft.core.registries.Registries
 import net.minecraft.sounds.SoundEvent

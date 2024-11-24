@@ -1,4 +1,4 @@
-package org.thirdTune.apex_extra.armors
+package org.wangziwenhk.apex_extra.armors
 
 import net.minecraft.world.item.ArmorItem
 import net.minecraft.world.item.ArmorMaterials

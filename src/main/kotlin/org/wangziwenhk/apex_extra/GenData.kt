@@ -1,9 +1,9 @@
-package org.thirdTune.apex_extra
+package org.wangziwenhk.apex_extra
 
 import net.minecraftforge.data.event.GatherDataEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber
-import org.thirdTune.apex_extra.gen.*
+import org.wangziwenhk.apex_extra.gen.*
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.FORGE)
 object GenData {
@@ -16,6 +16,8 @@ object GenData {
         gen.addProvider(event.includeClient(), ChineseLanguageProvider(packOutput))
         gen.addProvider(event.includeClient(), ModelProvider(packOutput, helper))
         gen.addProvider(event.includeClient(), SoundProvider(packOutput, helper))
-        gen.addProvider(event.includeClient(), CuriosProvider(packOutput, helper, event.lookupProvider))
+        gen.addProvider(event.includeClient(),
+            CuriosProvider(packOutput, helper, event.lookupProvider)
+        )
     }
 }

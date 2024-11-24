@@ -1,10 +1,10 @@
-package org.thirdTune.apex_extra.gen
+package org.wangziwenhk.apex_extra.gen
 
 import net.minecraft.data.PackOutput
 import net.minecraftforge.common.data.ExistingFileHelper
 import net.minecraftforge.common.data.SoundDefinitionsProvider
-import org.thirdTune.apex_extra.ApexExtra
-import org.thirdTune.apex_extra.ModSounds
+import org.wangziwenhk.apex_extra.ApexExtra
+import org.wangziwenhk.apex_extra.ModSounds
 
 class SoundProvider(gen: PackOutput, helper: ExistingFileHelper) :
     SoundDefinitionsProvider(gen, ApexExtra.MOD_ID, helper) {

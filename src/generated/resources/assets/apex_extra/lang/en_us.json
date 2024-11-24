@@ -1,5 +1,7 @@
 {
   "item.apex_extra.allfather_eye": "Eye of the Allfather",
+  "item.apex_extra.allfather_eye.effect": "Scan detected",
+  "item.apex_extra.octane_badge": "Octane Badges",
   "item.apex_extra.safe_boots": "Safe Boots",
   "item.apex_extra.stim": "Stim"
 }

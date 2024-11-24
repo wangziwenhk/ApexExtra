@@ -1,4 +1,4 @@
-package org.thirdTune.apex_extra
+package org.wangziwenhk.apex_extra
 
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
@@ -6,7 +6,8 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
 import net.minecraftforge.registries.RegistryObject
-import org.thirdTune.apex_extra.ResManager.TABS
+import org.wangziwenhk.apex_extra.ResManager.TABS
+
 
 @Mod.EventBusSubscriber(modid = ApexExtra.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 object ModCreativeTab {
@@ -18,10 +19,11 @@ object ModCreativeTab {
             event.accept(ModItems.STIM.get())
             event.accept(ModItems.ALLFATHER_EYE.get())
             event.accept(ModItems.SAFE_BOOTS.get())
+            event.accept(ModCurios.OCTANE_BADGE.get())
         }
     }
 
     fun init() {
-        FMLJavaModLoadingContext.get().modEventBus.addListener(ModCreativeTab::buildCreativeTabContent)
+        FMLJavaModLoadingContext.get().modEventBus.addListener(this::buildCreativeTabContent)
     }
 }

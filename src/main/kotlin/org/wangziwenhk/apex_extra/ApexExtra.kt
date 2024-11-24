@@ -1,26 +1,26 @@
-package org.thirdTune.apex_extra
+package org.wangziwenhk.apex_extra
 
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
-import org.thirdTune.apex_extra.ResManager.ITEMS
-import org.thirdTune.apex_extra.ResManager.SOUNDS
-import org.thirdTune.apex_extra.ResManager.TABS
-import org.thirdTune.apex_extra.handlers.FallHandler
+import org.wangziwenhk.apex_extra.ResManager.ITEMS
+import org.wangziwenhk.apex_extra.ResManager.SOUNDS
+import org.wangziwenhk.apex_extra.ResManager.TABS
+import org.wangziwenhk.apex_extra.handlers.FallHandler
 
 
 @Mod(ApexExtra.MOD_ID)
 class ApexExtra {
-    companion object{
+    companion object {
         const val MOD_ID = "apex_extra"
         const val MOD_NAME = "Apex Extra"
     }
-    init{
+
+    init {
         init()
     }
 
     private fun init() {
-
         ModCreativeTab.init()
         FMLJavaModLoadingContext.get().modEventBus.register(GenData)
         MinecraftForge.EVENT_BUS.register(FallHandler)
