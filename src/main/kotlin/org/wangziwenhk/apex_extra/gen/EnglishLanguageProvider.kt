@@ -21,6 +21,6 @@ class EnglishLanguageProvider(gen: PackOutput) : LanguageProvider(gen, ApexExtra
         // 传奇徽章相关
         this.add(ModCurios.OCTANE_BADGE.get(), "Octane Badges")
         // 插槽相关 (Curios Api)
-        this.add("curios.identifier."+ModCurios.LEGEND_BADGE_ID,"传奇徽章")
+        this.add("curios.identifier."+ModCurios.LEGEND_BADGE_ID,"Legend Badge")
     }
 }
